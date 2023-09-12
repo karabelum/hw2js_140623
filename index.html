@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2 Массивы и функции</title>
+</head>
+<body>
+    <!-- Задача 3. -->
+    <div id="box"></div>
+    <script>
+        //Задача 1.
+        var array = ['hello', 'oranges', 'age']
+        var lgth = 0
+        var longest
+        for(var i=0; i < array.length; i++){
+            if(array[i].length > lgth){
+                var lgth = array[i].length
+                longest = array[i]
+            }      
+        } 
+        console.log(longest)
+        var arr = longest.split('')
+        console.log(arr)
+
+        //Задача 2.
+        var myText = prompt("Задача 2.\nВведите текст:")
+        var myColor = prompt("Введите цвет текста на английском:")
+        var myFontSize = +prompt("Введите размер шрифта:")
+        marker(myText,myColor,myFontSize)
+        function marker(text,color,fontSize){
+            document.write(
+            `<p style = "font-family: Comic Sans MS; color: ${color}; font-size: ${fontSize}px;">${text}</p>`
+            )
+        }
+
+        //Задача 3.
+        var arr2 = ['images/giraffe.jpg', 'images/nature.jpg', 'images/rodent.jpg'];
+        placeImages(arr2);
+        function placeImages(arr3){
+            for(var i in arr3)
+                box.innerHTML += 
+                `<img style="display: flex; margin: 5px; height: 320px; width: 500px" src="${arr3[i]}">`
+        }
+    </script>
+</body>
+</html>
